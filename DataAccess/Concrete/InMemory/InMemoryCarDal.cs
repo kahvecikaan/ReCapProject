@@ -1,3 +1,4 @@
+using System.Linq.Expressions;
 using DataAccess.Abstract;
 using Entities.Concrete;
 
@@ -19,9 +20,19 @@ public class InMemoryCarDal : ICarDal
         };
 
     }
-    public List<Car> GetAll()
+    // public List<Car> GetAll()
+    // {
+    //     return _cars;
+    // }
+
+    public List<Car> GetAll(Expression<Func<Car, bool>>? filter = null)
     {
-        return _cars;
+        return filter == null ? _cars : _cars.Where(filter.Compile()).ToList();
+    }
+
+    public Car Get(Expression<Func<Car, bool>> filter)
+    {
+        return _cars.SingleOrDefault(filter.Compile()) ?? throw new Exception("Car not found!");
     }
 
     public void Add(Car car)

@@ -21,8 +21,10 @@ public class CarManager : ICarService
 
     public void Add(Car car)
     {
-        // business logic...
-        _carDal.Add(car);
+        if(car.Description.Length >= 2 && car.DailyPrice > 0)
+            _carDal.Add(car);
+        else
+            throw new Exception("Car name must be at least 2 characters and daily price must be greater than 0.");
     }
 
     public void Update(Car car)
@@ -36,10 +38,19 @@ public class CarManager : ICarService
         // business logic...
         _carDal.Delete(car);
     }
-
+    
     public Car GetById(int id)
     {
-        // business logic...
-        return _carDal.GetById(id);
+        return _carDal.Get(c => c.Id == id);
+    }
+
+    public List<Car> GetCarsByBrandId(int id)
+    {
+        return _carDal.GetAll(c => c.BrandId == id);
+    }
+
+    public List<Car> GetCarsByColorId(int id)
+    {
+        return _carDal.GetAll(c => c.ColorId == id);
     }
 }
