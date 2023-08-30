@@ -9,7 +9,7 @@ public class EfCarDal : ICarDal
 {
     public List<Car> GetAll(Expression<Func<Car, bool>>? filter = null)
     {
-        using (RentalServiceContext context = new RentalServiceContext())
+        using (CarRentalContext context = new CarRentalContext())
         {
             return filter == null ? context.Set<Car>().ToList() : context.Set<Car>().Where(filter).ToList();
         }
@@ -17,7 +17,7 @@ public class EfCarDal : ICarDal
 
     public Car Get(Expression<Func<Car, bool>> filter)
     {
-        using (RentalServiceContext context = new RentalServiceContext())
+        using (CarRentalContext context = new CarRentalContext())
         {
             return context.Set<Car>().SingleOrDefault(filter) ?? throw new Exception("NULL");
         }
@@ -25,7 +25,7 @@ public class EfCarDal : ICarDal
 
     public void Add(Car entity)
     {
-        using (RentalServiceContext context = new RentalServiceContext())
+        using (CarRentalContext context = new CarRentalContext())
         {
             var addedEntity = context.Entry(entity);
             addedEntity.State = EntityState.Added;
@@ -35,7 +35,7 @@ public class EfCarDal : ICarDal
 
     public void Update(Car entity)
     {
-        using (RentalServiceContext context = new RentalServiceContext())
+        using (CarRentalContext context = new CarRentalContext())
         {
             var updatedEntity = context.Entry(entity);
             updatedEntity.State = EntityState.Modified;
@@ -45,7 +45,7 @@ public class EfCarDal : ICarDal
 
     public void Delete(Car entity)
     {
-        using (RentalServiceContext context = new RentalServiceContext())
+        using (CarRentalContext context = new CarRentalContext())
         {
             var deletedEntity = context.Entry(entity);
             deletedEntity.State = EntityState.Deleted;

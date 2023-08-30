@@ -9,7 +9,7 @@ public class EfBrandDal : IBrandDal
 {
     public List<Brand> GetAll(Expression<Func<Brand, bool>>? filter = null)
     {
-        using (RentalServiceContext context = new RentalServiceContext())
+        using (CarRentalContext context = new CarRentalContext())
         {
             return filter == null ? context.Set<Brand>().ToList() : context.Set<Brand>().Where(filter).ToList();
         }
@@ -17,7 +17,7 @@ public class EfBrandDal : IBrandDal
 
     public Brand Get(Expression<Func<Brand, bool>> filter)
     {
-        using (RentalServiceContext context = new RentalServiceContext())
+        using (CarRentalContext context = new CarRentalContext())
         {
             return context.Set<Brand>().SingleOrDefault(filter) ?? throw new Exception("NULL");
         }
@@ -25,7 +25,7 @@ public class EfBrandDal : IBrandDal
 
     public void Add(Brand entity)
     {
-        using (RentalServiceContext context = new RentalServiceContext())
+        using (CarRentalContext context = new CarRentalContext())
         {
             var addedEntity = context.Entry(entity);
             addedEntity.State = EntityState.Added;
@@ -35,7 +35,7 @@ public class EfBrandDal : IBrandDal
 
     public void Update(Brand entity)
     {
-        using (RentalServiceContext context = new RentalServiceContext())
+        using (CarRentalContext context = new CarRentalContext())
         {
             var updatedEntity = context.Entry(entity);
             updatedEntity.State = EntityState.Modified;
@@ -45,7 +45,7 @@ public class EfBrandDal : IBrandDal
 
     public void Delete(Brand entity)
     {
-        using (RentalServiceContext context = new RentalServiceContext())
+        using (CarRentalContext context = new CarRentalContext())
         {
             var deletedEntity = context.Entry(entity);
             deletedEntity.State = EntityState.Deleted;

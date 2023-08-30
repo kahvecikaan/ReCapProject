@@ -9,7 +9,7 @@ public class EfColorDal : IColorDal
 {
     public List<Color> GetAll(Expression<Func<Color, bool>>? filter = null)
     {
-        using (RentalServiceContext context = new RentalServiceContext())
+        using (CarRentalContext context = new CarRentalContext())
         {
             return filter == null ? context.Set<Color>().ToList() : context.Set<Color>().Where(filter).ToList();
         }
@@ -17,7 +17,7 @@ public class EfColorDal : IColorDal
 
     public Color Get(Expression<Func<Color, bool>> filter)
     {
-        using (RentalServiceContext context = new RentalServiceContext())
+        using (CarRentalContext context = new CarRentalContext())
         {
             return context.Set<Color>().SingleOrDefault(filter) ?? throw new Exception("NULL");
         }
@@ -25,7 +25,7 @@ public class EfColorDal : IColorDal
 
     public void Add(Color entity)
     {
-        using (RentalServiceContext context = new RentalServiceContext())
+        using (CarRentalContext context = new CarRentalContext())
         {
             var addedEntity = context.Entry(entity);
             addedEntity.State = EntityState.Added;
@@ -35,7 +35,7 @@ public class EfColorDal : IColorDal
 
     public void Update(Color entity)
     {
-        using (RentalServiceContext context = new RentalServiceContext())
+        using (CarRentalContext context = new CarRentalContext())
         {
             var updatedEntity = context.Entry(entity);
             updatedEntity.State = EntityState.Modified;
@@ -45,7 +45,7 @@ public class EfColorDal : IColorDal
 
     public void Delete(Color entity)
     {
-        using (RentalServiceContext context = new RentalServiceContext())
+        using (CarRentalContext context = new CarRentalContext())
         {
             var deletedEntity = context.Entry(entity);
             deletedEntity.State = EntityState.Deleted;
