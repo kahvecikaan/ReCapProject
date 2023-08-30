@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business", "Business\Busine
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleUI", "ConsoleUI\ConsoleUI.csproj", "{08FF6818-40EB-45CD-B9DB-086AEE21FCDD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{373B9986-DE71-4C2A-88B3-D058AD8C1BE5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{08FF6818-40EB-45CD-B9DB-086AEE21FCDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{08FF6818-40EB-45CD-B9DB-086AEE21FCDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{08FF6818-40EB-45CD-B9DB-086AEE21FCDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{373B9986-DE71-4C2A-88B3-D058AD8C1BE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{373B9986-DE71-4C2A-88B3-D058AD8C1BE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{373B9986-DE71-4C2A-88B3-D058AD8C1BE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{373B9986-DE71-4C2A-88B3-D058AD8C1BE5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
