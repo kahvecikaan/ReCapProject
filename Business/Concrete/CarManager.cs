@@ -21,7 +21,7 @@ public class CarManager : ICarService
 
     public void Add(Car car)
     {
-        if(car.Description.Length >= 2 && car.DailyPrice > 0)
+        if(car.Description != null && car.Description.Length >= 2 && car.DailyPrice > 0)
             _carDal.Add(car);
         else
             throw new Exception("Car name must be at least 2 characters and daily price must be greater than 0.");
@@ -41,7 +41,7 @@ public class CarManager : ICarService
     
     public Car GetById(int id)
     {
-        return _carDal.Get(c => c.Id == id);
+        return _carDal.Get(c => c.CarId == id);
     }
 
     public List<Car> GetCarsByBrandId(int id)

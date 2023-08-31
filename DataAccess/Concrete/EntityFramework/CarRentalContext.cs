@@ -8,7 +8,7 @@ public class CarRentalContext : DbContext
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         optionsBuilder.
-            UseSqlite("Data Source=/Users/kaankahveci/RiderProjects/FinalProject/rentalservice.sqlite");
+            UseSqlite("Data Source=/Users/kaankahveci/RiderProjects/ReCapProject/carrental.sqlite");
     }
     
     public DbSet<Car>? Cars { get; set; }
