@@ -1,14 +1,15 @@
+using Core.Utilities.Results;
 using Entities.Concrete;
 
 namespace Business.Abstract;
 
 public interface ICarService
 {
-    List<Car> GetAll();
-    void Add(Car car);
-    void Update(Car car);
-    void Delete(Car car);
-    Car GetById(int id);
-    List<Car> GetCarsByBrandId(int id);
-    List<Car> GetCarsByColorId(int id);
+    IDataResult<List<Car>> GetAll();
+    IResult Add(Car car);
+    IResult Update(Car car);
+    IResult Delete(Car car);
+    IDataResult<Car> GetByCarId(int carId);
+    IDataResult<List<Car>> GetCarsByBrandId(int id);
+    IDataResult<List<Car>> GetCarsByColorId(int id);
 }
