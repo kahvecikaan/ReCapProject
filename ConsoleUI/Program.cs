@@ -32,5 +32,17 @@ public class Program
                 }
             }
         }
+        
+        // write a code to test the RentalManager
+        
+        // var rentalManager = new RentalManager(new EfRentalDal());
+        // var result = rentalManager.Add(new Rental
+        // {
+        //     CarId = 1,
+        //     CustomerId = 1,
+        //     RentDate = DateTime.Now,
+        //     ReturnDate = null
+        // });
+        // Console.WriteLine(result.Message);
     }
 }
