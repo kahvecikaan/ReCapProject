@@ -3,6 +3,7 @@ using Business.Constants;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.DTOs;
 
 namespace Business.Concrete;
 
@@ -59,5 +60,10 @@ public class CarManager : ICarService
     public IDataResult<List<Car>> GetCarsByColorId(int id)
     {
         return new SuccessDataResult<List<Car>>(_carDal.GetAll(c => c.ColorId == id));
+    }
+
+    public IDataResult<List<CarDetailDto>> GetCarDetails()
+    {
+        return new SuccessDataResult<List<CarDetailDto>>(_carDal.GetCarDetails(), Messages.CarsListed);
     }
 }

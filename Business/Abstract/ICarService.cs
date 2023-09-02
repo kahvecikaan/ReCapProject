@@ -1,5 +1,6 @@
 using Core.Utilities.Results;
 using Entities.Concrete;
+using Entities.DTOs;
 
 namespace Business.Abstract;
 
@@ -12,4 +13,5 @@ public interface ICarService
     IDataResult<Car> GetByCarId(int carId);
     IDataResult<List<Car>> GetCarsByBrandId(int id);
     IDataResult<List<Car>> GetCarsByColorId(int id);
+    IDataResult<List<CarDetailDto>> GetCarDetails();
 }
