@@ -12,4 +12,5 @@ public static class Messages
     public const string RentalUpdated = "Rental updated.";
     public const string RentalsListed = "Rentals listed.";
     public const string RentalNotAdded = "Rental operation failed because the car has not been returned from a previous rental.";
+    public const string RentalNotAvailable = "Rental operation failed because the car is not available.";
 }
