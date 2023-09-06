@@ -59,7 +59,7 @@ public class CarsController : ControllerBase
         return BadRequest(result);
     }
     
-    [HttpGet("getcardetails")]
+    [HttpGet("getdetails")]
     public IActionResult GetCarDetails()
     {
         var result = _carService.GetCarDetails();
@@ -70,7 +70,7 @@ public class CarsController : ControllerBase
         return BadRequest(result);
     }
     
-    [HttpPost("addcar")]
+    [HttpPost("add")]
     public IActionResult Add(Car car)
     {
         var result = _carService.Add(car);
@@ -81,7 +81,7 @@ public class CarsController : ControllerBase
         return BadRequest(result);
     }
     
-    [HttpPost("updatecar")]
+    [HttpPost("update")]
     public IActionResult Update(Car car)
     {
         var result = _carService.Update(car);
@@ -92,7 +92,7 @@ public class CarsController : ControllerBase
         return BadRequest(result);
     }
     
-    [HttpPost("deletecar")]
+    [HttpPost("delete")]
     public IActionResult Delete(Car car)
     {
         var result = _carService.Delete(car);
