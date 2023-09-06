@@ -18,4 +18,13 @@ public static class Messages
     public const string BrandUpdated = "Brand updated.";
     public const string BrandsListed = "Brands listed.";
     public const string BrandNameInvalid = "Brand name should be at least 2 characters.";
+    public const string CustomerAdded = "Customer added.";
+    public const string CustomerDeleted = "Customer deleted.";
+    public const string CustomerUpdated = "Customer updated.";
+    public const string CustomersListed = "Customers listed.";
+    public const string ColorAdded = "Color added.";
+    public const string ColorDeleted = "Color deleted.";
+    public const string ColorUpdated = "Color updated.";
+    public const string ColorsListed = "Colors listed.";
+    public const string ColorNameInvalid = "Color name should be at least 2 characters.";
 }
