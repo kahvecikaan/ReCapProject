@@ -15,6 +15,12 @@ builder.Services.AddSingleton<IRentalDal, EfRentalDal>(); // IoC Container, 1 in
 builder.Services.AddSingleton<IBrandService, BrandManager>(); // IoC Container, 1 instance of BrandManager for all requests
 builder.Services.AddSingleton<IBrandDal, EfBrandDal>(); // IoC Container, 1 instance of EfBrandDal for all requests
 
+builder.Services.AddSingleton<ICustomerService, CustomerManager>(); // IoC Container, 1 instance of CustomerManager for all requests
+builder.Services.AddSingleton<ICustomerDal, EfCustomerDal>(); // IoC Container, 1 instance of EfCustomerDal for all requests
+
+builder.Services.AddSingleton<IColorService, ColorManager>(); // IoC Container, 1 instance of ColorManager for all requests
+builder.Services.AddSingleton<IColorDal, EfColorDal>(); // IoC Container, 1 instance of EfColorDal for all requests
+
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
