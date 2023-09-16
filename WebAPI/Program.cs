@@ -1,30 +1,26 @@
+using Autofac;
+using Autofac.Extensions.DependencyInjection;
 using Business.Abstract;
 using Business.Concrete;
+using Business.DependencyResolvers.Autofac;
 using DataAccess.Abstract;
 using DataAccess.Concrete.EntityFramework;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-builder.Services.AddSingleton<ICarService, CarManager>(); // IoC Container, 1 instance of CarManager for all requests
-builder.Services.AddSingleton<ICarDal, EfCarDal>(); // IoC Container, 1 instance of EfCarDal for all requests
 
-builder.Services.AddSingleton<IRentalService, RentalManager>(); // IoC Container, 1 instance of RentalManager for all requests
-builder.Services.AddSingleton<IRentalDal, EfRentalDal>(); // IoC Container, 1 instance of EfRentalDal for all requests
 
-builder.Services.AddSingleton<IBrandService, BrandManager>(); // IoC Container, 1 instance of BrandManager for all requests
-builder.Services.AddSingleton<IBrandDal, EfBrandDal>(); // IoC Container, 1 instance of EfBrandDal for all requests
-
-builder.Services.AddSingleton<ICustomerService, CustomerManager>(); // IoC Container, 1 instance of CustomerManager for all requests
-builder.Services.AddSingleton<ICustomerDal, EfCustomerDal>(); // IoC Container, 1 instance of EfCustomerDal for all requests
-
-builder.Services.AddSingleton<IColorService, ColorManager>(); // IoC Container, 1 instance of ColorManager for all requests
-builder.Services.AddSingleton<IColorDal, EfColorDal>(); // IoC Container, 1 instance of EfColorDal for all requests
-
+// Register other services
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+// Use Autofac as the default DI and configure it
+builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory())
+    .ConfigureContainer<ContainerBuilder>(b =>
+    {
+        b.RegisterModule(new AutofacBusinessModule());
+    });
 
 var app = builder.Build();
 
