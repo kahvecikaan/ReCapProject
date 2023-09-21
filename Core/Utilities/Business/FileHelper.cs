@@ -7,7 +7,7 @@ namespace Core.Utilities.Business;
 public class FileHelper
 {
     private const string ImageDirectoryPath = "wwwroot/CarImages/";
-    public static readonly string DefaultImagePath = "path to default.jpg"; // update this appropriately
+    public static readonly string DefaultImagePath = "/Users/kaankahveci/Desktop/default.jpeg";
     
     public static IDataResult<string> Upload(IFormFile file)
     {
