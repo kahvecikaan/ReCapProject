@@ -27,4 +27,12 @@ public static class Messages
     public const string ColorUpdated = "Color updated.";
     public const string ColorsListed = "Colors listed.";
     public const string ColorNameInvalid = "Color name should be at least 2 characters.";
+    public const string CarImageAdded = "Car image added.";
+    public const string CarImageNotFound = "Car image not found.";
+    public const string CarImageDeleted = "Car image deleted.";
+    public const string CarImageUpdated = "Car image updated.";
+    public const string CarImagesListed = "Car images listed.";
+    public const string ImageLimitExceeded = "Image limit exceeded.";
+    public const string InvalidImageExtension = "Invalid image extension.";
+    public static readonly string[] ValidImageFileTypes = { ".JPG", ".JPEG", ".PNG", ".TIF", ".TIFF", ".GIF", ".BMP", ".ICO" };
 }
