@@ -1,3 +1,5 @@
+using Core.Entities.Concrete;
+
 namespace Business.Constants;
 
 public static class Messages
@@ -34,5 +36,13 @@ public static class Messages
     public const string CarImagesListed = "Car images listed.";
     public const string ImageLimitExceeded = "Image limit exceeded.";
     public const string InvalidImageExtension = "Invalid image extension.";
+    public const string  UserAdded = "User added.";
+    public const string UserRegistered = "User registered.";
+    public const string UserNotFound = "User not found.";
+    public const string PasswordError = "Password error.";
+    public const string SuccessfulLogin = "Successful login.";
+    public const string UserAlreadyExists = "User already exists";
+    public const string AccessTokenCreated = "Access token created."; 
+    public const string AuthorizationDenied = "Authorization denied.";
     public static readonly string[] ValidImageFileTypes = { ".JPG", ".JPEG", ".PNG", ".TIF", ".TIFF", ".GIF", ".BMP", ".ICO" };
 }
