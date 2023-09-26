@@ -13,7 +13,7 @@ public class EfCustomerDal : EfEntityRepositoryBase<Customer, CarRentalContext>,
         using (CarRentalContext context = new CarRentalContext())
         {
             var result = from c in context.Customers
-                join u in context.Users on c.UserId equals u.UserId
+                join u in context.Users on c.UserId equals u.Id
                 select new CustomerDetailDto
                 {
                     CustomerId = c.CustomerId,
