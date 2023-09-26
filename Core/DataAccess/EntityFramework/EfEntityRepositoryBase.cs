@@ -20,7 +20,7 @@ public class EfEntityRepositoryBase<TEntity, TContext>
     {
         using (TContext context = new TContext())
         {
-            return context.Set<TEntity>().SingleOrDefault(filter) ?? throw new Exception("NULL");
+            return context.Set<TEntity>().SingleOrDefault(filter);
         }
     }
     
